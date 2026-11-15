@@ -7,6 +7,16 @@ function dataToBind (data, databindings) {
   return data;
 };
 
+function escapeHtml (value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 module.exports = {
-    dataToBind
+    dataToBind,
+    escapeHtml
 };
